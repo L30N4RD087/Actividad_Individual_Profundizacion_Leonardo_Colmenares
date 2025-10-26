@@ -1,0 +1,96 @@
+/* --------------------------------------
+ * a. 5 VARIABLES SASS
+ * -------------------------------------- */
+$color-principal: #007bff;          // Azul de Bootstrap primario
+$color-secundario: #343a40;         // Gris oscuro para textos y navbar
+$color-fondo-claro: #f8f9fa;        // Fondo de la página
+$font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$card-transition-duration: 0.2s;    // Duración para efectos hover
+
+/* --------------------------------------
+ * Estilos Globales
+ * -------------------------------------- */
+body {
+    background-image: url('imagenes/fondo_pagina.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    background-color: $color-fondo-claro; /* Fallback si la imagen falla */
+    font-family: $font-stack;
+}
+
+h1, h2, h5 {
+    color: $color-secundario;
+    /* b. Anidación de Selectores (para títulos dentro del body) */
+    &.text-primary {
+        color: $color-principal !important;
+    }
+}
+
+/* --------------------------------------
+ * Estilos para la Página Principal (index.html)
+ * -------------------------------------- */
+
+.card {
+    border: none;
+    transition: transform $card-transition-duration ease-in-out;
+    
+    /* b. Anidación de Selectores */
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .card-img-top {
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* c. 1. Interpolación en Media Query para Responsive */
+@media (max-width: 575.98px) {
+    .card-img-top {
+        /* Usando variable con interpolación para el valor de altura en móviles */
+        $mobile-height: 400px; 
+        height: #{$mobile-height}; 
+    }
+}
+
+
+/* --------------------------------------
+ * Estilos para la Página de Detalle (detalle-pelicula.html)
+ * -------------------------------------- */
+
+/* c. 2. Interpolación en Propiedad (para crear un estilo dinámico) */
+$section-border-color: $color-principal;
+
+#comentarios {
+    h2 {
+        /* Usando interpolación para la propiedad border-bottom-color */
+        border-bottom: 2px solid #{$section-border-color}; 
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+    .card {
+        border-left: 5px solid $color-principal; /* Destaca los comentarios */
+    }
+}
+
+/* b. Anidación de Selectores Profunda para Pie de Página */
+footer {
+    background-color: $color-secundario !important; 
+    
+    p {
+        margin-bottom: 0;
+        
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
