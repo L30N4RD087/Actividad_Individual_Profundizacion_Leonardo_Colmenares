@@ -1,35 +1,23 @@
-@charset "UTF-8";
-/* --------------------------------------
- * a. 5 VARIABLES SASS
- * -------------------------------------- */
-/* --------------------------------------
- * Estilos Globales
- * -------------------------------------- */
 body {
   background-image: url("imagenes/fondo_pagina.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #f8f9fa; /* Fallback si la imagen falla */
+  background-color: #f8f9fa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h5 {
   color: #343a40;
-  /* b. Anidación de Selectores (para títulos dentro del body) */
 }
 h1.text-primary, h2.text-primary, h5.text-primary {
   color: #007bff !important;
 }
 
-/* --------------------------------------
- * Estilos para la Página Principal (index.html)
- * -------------------------------------- */
 .card {
   border: none;
   transition: transform 0.2s ease-in-out;
-  /* b. Anidación de Selectores */
 }
 .card:hover {
   transform: translateY(-5px);
@@ -41,28 +29,20 @@ h1.text-primary, h2.text-primary, h5.text-primary {
      object-fit: cover;
 }
 
-/* c. 1. Interpolación en Media Query para Responsive */
 @media (max-width: 575.98px) {
   .card-img-top {
-    /* Usando variable con interpolación para el valor de altura en móviles */
     height: 400px;
   }
 }
-/* --------------------------------------
- * Estilos para la Página de Detalle (detalle-pelicula.html)
- * -------------------------------------- */
-/* c. 2. Interpolación en Propiedad (para crear un estilo dinámico) */
 #comentarios h2 {
-  /* Usando interpolación para la propiedad border-bottom-color */
   border-bottom: 2px solid #007bff;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
 #comentarios .card {
-  border-left: 5px solid #007bff; /* Destaca los comentarios */
+  border-left: 5px solid #007bff;
 }
 
-/* b. Anidación de Selectores Profunda para Pie de Página */
 footer {
   background-color: #343a40 !important;
 }
