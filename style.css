@@ -1,0 +1,67 @@
+
+body {
+    
+    background-image: url(imagenes/fondo_pagina.jpg);
+    background-size: cover;          
+    background-attachment: fixed;    
+    background-position: center center; 
+    background-repeat: no-repeat;   
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h5 {
+    color: #343a40; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+
+.card {
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+
+.card-img-top {
+    height: 400px; 
+    object-fit: cover; 
+}
+
+
+@media (max-width: 575.98px) {
+    .card-img-top {
+        height: 400px; 
+    }
+}
+
+
+
+.col-md-4 img.img-fluid {
+    
+    max-height: 600px; 
+    width: 100%;
+}
+
+
+#comentarios h2 {
+    border-bottom: 2px solid #007bff; 
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+
+.row-cols-2 img, .row-cols-sm-3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+footer {
+    
+    background-color: #212529 ; 
+}
